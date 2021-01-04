@@ -1,5 +1,5 @@
 package ru.otus.otuskotlin.general.hello.world
 
 fun main() {
-    println("Hi World!")
+    println("Hello Big World!")
 }
