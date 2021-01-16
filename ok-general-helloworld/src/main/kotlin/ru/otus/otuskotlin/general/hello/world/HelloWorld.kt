@@ -5,9 +5,9 @@ import java.lang.RuntimeException
 fun main() {
     println("Hello Big World!")
 
-    val x: Int? =null
-    //val y=x?.toDouble() ?: throw RuntimeException ("null is not allowed here!!!!")
-    if (x!=null) {
-        print("")
+    val v1:Int = "Some String".let{
+        println ("string $it")
+    25
     }
+
 }
