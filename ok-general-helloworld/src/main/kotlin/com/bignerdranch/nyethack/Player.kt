@@ -7,3 +7,7 @@ class Player {
         field=value.trim()
     }
 }
+class Dice(){
+    val rolledValue
+        get()=(1..6).shuffled().first()
+}
