@@ -1,12 +1,14 @@
 package ru.otus.otuskotlin.general
 
 import org.junit.Assert.*
+import ru.otus.otuskotlin.general.dsl.user
+import ru.otus.otuskotlin.general.models.UserModel
 import java.sql.BatchUpdateException
 import kotlin.test.Test
 internal class DslTest {
     @Test
-    fun dslTest() {
-        val User = user {
+    fun CreateUserModel() {
+        val user: UserModel = user {
             name {
                 first = " Иван"
                 second = "Иванович"
