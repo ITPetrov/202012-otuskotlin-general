@@ -2,7 +2,6 @@ package ru.otus.otuskotlin.general.dsl
 
 import ru.otus.otuskotlin.general.models.UserId
 import ru.otus.otuskotlin.general.models.UserModel
-import ru.otus.otuskotlin.general.models.UserNameConfig
 import ru.otus.otuskotlin.general.models.UserPermissionsModel
 
 class UserConfig {
@@ -17,6 +16,11 @@ class UserConfig {
         name_f=userConfig.first
         name_m=userConfig.second
         name_l=userConfig.last
+    }
+
+    fun permissions(block:UserPermissionsConfig.()->Unit){
+        val permissionsConfig=UserPermissionsConfig().apply(block)
+        permissions=permissionsConfig.permissions.toMutableSet()
     }
     fun build()= UserModel(
         id=id,

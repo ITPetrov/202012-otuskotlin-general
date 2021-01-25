@@ -1,4 +1,4 @@
-package ru.otus.otuskotlin.general.models
+package ru.otus.otuskotlin.general.dsl
 
 class UserNameConfig {
     var first: String=""

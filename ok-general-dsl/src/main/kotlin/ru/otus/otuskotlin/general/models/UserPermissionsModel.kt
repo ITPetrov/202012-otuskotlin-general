@@ -7,5 +7,4 @@ enum class UserPermissionsModel {
     DELETE,
     GET_NEWS,
     SEND_MESSAGE,
-
 }
