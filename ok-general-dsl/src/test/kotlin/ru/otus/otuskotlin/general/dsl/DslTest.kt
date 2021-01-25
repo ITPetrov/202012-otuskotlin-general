@@ -1,14 +1,12 @@
 package ru.otus.otuskotlin.general
 
-import org.junit.Assert
 import org.junit.Assert.*
+import ru.otus.otuskotlin.general.dsl.addPermits
 import ru.otus.otuskotlin.general.dsl.user
 import ru.otus.otuskotlin.general.models.UserModel
 import ru.otus.otuskotlin.general.models.UserPermissionsModel
-import java.sql.BatchUpdateException
 import kotlin.test.Test
 import kotlin.test.assertTrue
-import org.junit.Assert.assertTrue as assertTrue1
 
 internal class DslTest {
     @Test
@@ -26,8 +24,8 @@ internal class DslTest {
                 +UserPermissionsModel.GET_NEWS
             }
         }
-        assertEquals("Иванович",user.mname)
-        assertTrue ("permisson must contain ALL permissions")   {
+        assertEquals("Иванович", user.mname)
+        assertTrue("permisson must contain ALL permissions") {
             user.permissions.containsAll(
                 listOf(
                     UserPermissionsModel.READ,
@@ -38,4 +36,13 @@ internal class DslTest {
             )
         }
     }
+
+
+    @Test
+    fun infixTest (){
+        val user=UserModel()
+        user addPermits UserPermissionsModel.READ
+        assertEquals(UserPermissionsModel.READ,user.permissions.first())
+    }
 }
+

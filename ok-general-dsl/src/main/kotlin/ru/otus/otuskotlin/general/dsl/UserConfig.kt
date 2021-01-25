@@ -4,6 +4,8 @@ import ru.otus.otuskotlin.general.models.UserId
 import ru.otus.otuskotlin.general.models.UserModel
 import ru.otus.otuskotlin.general.models.UserPermissionsModel
 
+@UserDsl
+
 class UserConfig {
     private var id: UserId=UserId.NONE
     private var name_f: String=""
